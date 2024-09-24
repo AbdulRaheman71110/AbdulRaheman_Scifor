@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSBOXMODEL.</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            align-content: space-around;
+            height: 500px;
+            border: solid 5px black;
+            background-color: antiquewhite;
+        }
+        .item{
+            border: solid 2px black;
+            color: white;
+            background-color: coral;
+            padding: 20px;
+            text-align: center;
+            margin: 10px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 100px;
+            order: 2;
+            align-self: flex-start;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Red</div>
+        <div class="item">Orange</div>
+        <div class="item">Yellow</div>
+        <div class="item">Green</div>
+        <div class="item">blue</div>
+
+    </div>
+</body>
+</html>
