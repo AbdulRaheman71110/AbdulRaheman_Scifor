@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .form{
+            text-align: center;
+            flex-direction: column;
+            border: 2px solid black;
+            background-color: aquamarine;
+        }
+        label,input{
+            justify-content: space-between;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            margin-left: 550px;
+        }
+    </style>
+</head>
+<body>
+    <form class="form">
+        <label for="FirstName">First Name :</label>
+        <input type="text" id="FirstName" value="FirstName"><br>
+
+        <label for="LastName">LastName :</label>
+        <input type="text" id="Lastname" value="LastName"><br>
+
+        <label for="PhoneNO">Phone :</label>
+        <input type="text" id="PhoneNO" value="0091"><br>
+
+        <label for="Male">Male :</label>
+        <input type="checkbox" value="Male">
+
+        <label for="Male">Female :</label>
+        <input type="checkbox" value="Female"><br>
+
+        <button>Submit</button>
+
+    </form>
+</body>
+</html>
