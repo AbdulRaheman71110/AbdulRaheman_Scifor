@@ -1,0 +1,29 @@
+1) What is HTML?
+=>  HTML is hyper Text markup language. It is used to create web page. HTML consist of attributes & tags.using HTML we can create
+   a web page which have heading list link images etc.
+
+2) Are HTML tags & Elements the same thing?
+=> No the html tags and elemnats are not same because hmtl tags are tags which have opening tag & closing tag or same are self closing tag
+   elements are called combination of tags which have a contain present in it.
+
+3) what are html tags & attributes in html?
+=> HTML tags are of two type one is container which contains info between the tags
+   exp: <h1> Hello World! </h1>
+
+   ii) self closing tags which does not have a closing tags 
+   exp: <br/>, <image/>
+
+   attributes are the hidden tag in opening tag which modifies the elements of tag
+   Exp: <h1 color: black; > Hello World! </h1>
+
+4) What are void elements in HTMl?
+=> void elements are self closing that don't require a closing tag because they do have a contain in it
+
+5) what is the feature of HTML?
+=> it is easy to learn & easy to use.
+   Images, videos, and audio can be added to a web page.
+   it is platform-independent.
+
+6) Diff between HTML & XHTML?
+=> HTML allows for loose syntax, with end tags and attributes often being optional.
+   XHTML requires end tags for all elements and attributes to be quoted.
