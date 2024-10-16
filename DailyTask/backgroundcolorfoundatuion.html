@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation button & background.</title>
+    <!-- Include Foundation CSS from CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+    <meta class="foundation-mq">
+    <style>
+        .container{
+            text-align: center;
+            margin: 20px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Foundation Background Color</h1>
+        <div class="callout primary">this is primary color.</div>
+        <div class="callout secondary">This is a secondary color.</div>
+        <div class="callout alert">This is a alert color.</div>
+        <div class="callout success">This is a success color.</div>
+    </div>
+    <div class="container">
+        <h2>Foundation Button Color</h2>
+        <button class="button primary">Primary Button</button>
+        <button class="button secondary">secondary Button</button>
+        <button class="button success">success Button</button>
+        <button class="button alert">alert Button</button>
+        <button class="button hollow">hollow Button</button>
+        <button class="button disabled">diaabled Button</button>
+        <button class="button expanded">expanded button</button>
+    </div>
+    <!-- Include Foundation JS and dependencies from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
+    <script>
+        $(document).foundation(); // Initialize Foundation
+    </script>
+</body>
+</html>
