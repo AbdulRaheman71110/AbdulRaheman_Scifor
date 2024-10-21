@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+/* navbar Css starts*/
+.navbar{
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(223, 223, 223);
+}
+.logo a{
+    width: 120px;
+    cursor: pointer;
+    color: black;
+    font-size: 35px; font-weight: 600;
+    text-decoration: none;
+}
+.logo a:hover{
+    color: white;
+    text-decoration: none;
+}
+span{
+    color: #ea1538;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 18px; font-weight: bold;
+}
+.navbar ul li a:hover{
+    color: #ea1538;
+    transition: .3s;
+}
+.btn1{
+    padding: 5px 20px;
+    border-radius: 25px;
+}
+.btn1 a{
+    color: black;
+}
+.btn1 a:hover{
+    color: white;
+    text-decoration: none;
+}
+.btn1:hover{
+    background-color: #ea1538;
+    border-color: white;
+}
+/* Navbar Css ends */
+
+.main-home{
+    padding: 15% 15%;
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://www.sugarkids.es/blog/wp-content/uploads/2015/03/1-copia2.jpg);
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    align-items: center;
+}
+.main-text h5{
+    color: black;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.main-text h1{
+    color: #ea1538;
+    font-size: 65px;
+    text-transform: capitalize;
+    line-height: 1.1;
+    font-weight: 500;
+    margin: 6px 0 10px;
+}
+.main-text p{
+    color: black;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+.main-btn{
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    border: none;
+}
+.main-btn a{
+    color: #ea1538;
+}
+.main-btn:hover{
+    background-color: #ea1538;
+    transition: .3s;
+}
+.main-btn a:hover{
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
+/* banner content ends */
+
+/* card css start  */
+#btn2 button{
+    width: 100px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid black;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#btn2 button:hover{
+    background-color: #ea1538;
+    color: white;
+}
+
+/* card css end */
+
+/* footer css start */
+#footer{
+    width: 100%;
+    background-color: rgb(223, 223, 223);
+    margin-top: 100px;
+}
+#footer h2{
+    color: black;
+    padding: 10px;
+}
+.icons i{
+    font-size: 25px;
+    cursor: pointer;
+}
+/* footer css ends */
