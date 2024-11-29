@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reversed and Sorted Array</title>
+</head>
+<body>
+    <div class="container">
+        <h4>Input Array= ['d', 'a', 'c', 'b']</h4>
+        
+    </div>
+    <script>
+    function reverseAndSortArray(arr) {
+
+    let reversedArray = arr.reverse();
+    
+    let sortedArray = reversedArray.sort();
+    
+    document.write("output in Reversed and Sorted Array: " + sortedArray.join(", ") + "<br>");
+}
+
+reverseAndSortArray(['d', 'a', 'c', 'b']);
+
+    </script>
+</body>
+</html>
