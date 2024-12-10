@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>React Example</title>
+
+<!-- import the react libraray -->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    function Display() {
+        const app = () => {
+            ReactDOM.render(
+                <div>
+                    <h2>HEllo WORLD!</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum recusandae cupiditate non.</p>
+                </div>,
+                document.getElementById('root')
+            );
+        };
+
+        return(
+            <button onClick={app}>Click ME</button>
+        );
+    }
+
+    ReactDOM.render(<Display/>, document.getElementById('root'))
+</script>
+</body>
