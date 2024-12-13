@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulate Array.</title>
+</head>
+<body>
+  <h1>Manipulate Arrays</h1>
+  <p>Check the browser console for the result.</p>
+
+  <script>
+    function manipulateArray(arr) {
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].toUpperCase();
+    }
+
+    let uniqueArray = [...new Set(arr)];
+
+    let userInput = prompt("Enter a new string to add:");
+      if (userInput) {
+        uniqueArray.push(userInput.toUpperCase());
+    }
+
+      console.log("Final Array:", uniqueArray);
+    }
+
+    let inputArray = ["audi","honda","audi","hyundai","mercedes","toyota"];
+    manipulateArray(inputArray);
+  </script>
+</body>
+</html>
