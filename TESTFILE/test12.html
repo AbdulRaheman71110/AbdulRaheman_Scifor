@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Details with React</title>
+
+  <!-- React CDN Links -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- Babel for JSX Transpilation -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    const UserDetails = (props) => {
+      return (
+        <div>
+          <h2>User Details</h2>
+          <p><strong>Name:</strong> {props.name}</p>
+          <p><strong>Age:</strong> {props.age}</p>
+          <p><strong>Email:</strong> {props.email}</p>
+          <p><strong>Mobile No:</strong> {props.mobileno}</p>
+          <p><strong>City:</strong> {props.city}</p>
+        </div>
+      );
+    };
+
+    
+    const App = () => {
+      return (
+        <div>
+          <UserDetails 
+            name="Abdul Raheman"
+            age={26}
+            email="abdulraheman71110@gmail.com"
+            mobileno="914-661-1158"
+            city="Nanded."
+          />
+        </div>
+      );
+    };
+
+
+    const rootElement = document.getElementById("root");
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<App />);
+  </script>
+</body>
+</html>
