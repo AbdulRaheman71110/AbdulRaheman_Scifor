@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Class Component</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    class UpdateStateComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          name: 'John',
+          lastName: 'Doe',
+          age: 30,
+        };
+      }
+
+      updateState = () => {
+        this.setState({
+          name: 'Abdul',
+          lastName: 'Raheman',
+          age: 25,
+        });
+      };
+
+      render() {
+        const { name, lastName, age } = this.state;
+        return (
+          <div>
+            <h1>React Class Component</h1>
+            <p>Name: {name}</p>
+            <p>Last Name: {lastName}</p>
+            <p>Age: {age}</p>
+            <button onClick={this.updateState}>Update State</button>
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(<UpdateStateComponent />, document.getElementById('root'));
+  </script>
+</body>
+</html>
