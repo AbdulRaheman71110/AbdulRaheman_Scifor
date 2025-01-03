@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// Function to check if a number is even or odd
+function checkEvenOdd(num) {
+    if (num % 2 === 0) {
+        console.log(num + " is an Even number.");
+    } else {
+        console.log(num + " is an Odd number.");
+    }
+}
+
+
+checkEvenOdd(7); 
+checkEvenOdd(10); 
+
+
+// Function to calculate factorial
+function factorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+
+let num = 9;
+console.log("Factorial of " + num + " is: " + factorial(num));
+
+
+    </script>
+</body>
+</html>
