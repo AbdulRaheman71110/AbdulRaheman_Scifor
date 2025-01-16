@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Roboto", serif;
+}
+
+:root{
+    --bg-color: #ffffff;
+    --snd-bg-color: #c4c4c4;
+    --text-color: #505050;
+    --main-color: #15bddb;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+section{
+    min-height: auto;
+    padding: 8.5rem 0% 2rem;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 2%;
+    background: var(--bg-color);
+    border-bottom: 3px solid var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* navbar section */
+.logo{
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: default;
+}
+.logo span{
+    color: var(--main-color);
+}
+
+.navbar a{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+
+.navbar a:hover{
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    border-radius: 2px;
+    padding: 5px 5px;
+    text-decoration: none;
+}
+#search-icon{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+/* image container css */
+section .slider{
+    /* height: 100%;
+    width: 100%; */
+    
+}
+ /* About us starts*/
+.AboutUS{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    background: var(--bg-color);
+}
+.heading{
+    text-align: center;
+    text-decoration: underline var(--main-color) -1rem;
+    text-underline-offset: 2rem;
+    font-size: 3rem;
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+
+.AboutUS h3{
+    text-align: center;
+    padding-top: 2rem;
+    font-weight: 400;
+    font-size: 3rem;
+}
+.AboutUS p{
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    word-spacing: 10px;
+}
+.AboutUS button{
+    padding: 1rem 2rem;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10rem;
+    margin-left: 48%;
+    font-size: 1.3rem;
+
+    opacity: 0.8;
+  transition: 0.3s;
+    
+}
+.AboutUS button:hover{
+    opacity: 1;
+}
+
+/* services css  */
+
+.Services{
+    background: var(--snd-bg-color);
+    padding: 100px 5%;
+    /* padding-bottom: 100px; */
+}
+
+.Services p{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* .Services .heading{
+    text-align: center;
+    padding-bottom: 15px;
+    color: #ffff;
+    font-size: 50px;
+} */
+
+.Services .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 10px;
+    height: auto;
+    width: auto;
+}
+
+.Services .box-container .box{
+    border-radius: 5px;
+    background: #ffff;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.Services .box-container .box .btn{
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    cursor: pointer;
+    border: none;
+    opacity: 0.8;
+  transition: 0.3s;
+}
+
+.Services .box-container .box .btn:hover{
+    opacity: 1;
+}
+
+.Services .box-container .box h3{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 2rem;
+}
+
+.Services .box-container .box p{
+    font-size: 15px;
+    font-weight: 400;
+    padding: 1rem;
+    word-spacing: 1.5rem;
+}
+
+.Services .box-container .box i{
+    background-color: var(--main-color);
+    font-size: 4rem;
+    padding: 2rem;
+    border-radius: 4rem;
+}
+
+/* Events Section css */
+
+.Events{
+    padding: 100px 5%;
+    background: var(--bg-color);
+    align-items: center;
+}
+
+.Events .events-content .heading{
+    padding-bottom: 3.5rem;
+    color: var(--text-color);
+}
+
+.Events .events-content p{
+    font-size: 1.5rem;
+    font-weight: 400;
+    word-spacing: 2px;
+}
+
+.Events .events-content h3{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 2.5rem;
+}
+
+.Events .events-content .P2{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+
+/* review css */
+
+.review{
+    background: linear-gradient(45deg, blueviolet, lightgreen);
+}
+
+.review .review-slider{
+    padding-bottom: 100px;
+}
+
+.review .heading{
+    margin-bottom: 3rem;
+    color: var(--bg-color);
+}
+
+.review .para{
+    text-align: center;
+    color: var(--bg-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 1rem;
+
+}
+  
+.review .box{
+    padding:2rem;
+    text-align: center;
+    background: var(--bg-color);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+}
+
+
+.review .box h3{
+    color:var(--text-color);
+    font-size: 2.5rem;
+}
+  
+.review .box p{
+    color:var(--text-color);
+    font-size: 1.5rem;
+    padding:1rem 0;
+}
+
+/* info css */
+
+.info{
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.info .info-content i{
+    color: var(--bg-color);
+    font-size: 4rem;
+    padding: 1rem;
+}
+
+.info .info-content p{
+    color: var(--bg-color);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+/* footer css */
+.footer {
+    background: var(--text-color);
+    border-bottom: 2px var(--main-color) solid;
+}
+.footer .footer-content{
+    display: flex;
+    justify-content: center;
+}
+
+.footer .footer-content h2{
+    color: var(--bg-color);
+    font-size: 2rem;
+    margin-bottom:5px ;
+}
+
+.footer .footer-content .links{
+    display: flex;
+    flex-direction: column;
+    padding-right: 7rem;
+}
+
+.footer .footer-content .links a{
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: var(--bg-color);
+
+}
+
+.footer .footer-content .links a:hover{
+    color: var(--main-color);
+}
+
+.footer .footer-content .links a::before{
+    content: "\f105";
+    font-family: fontawesome;
+    margin-right: 5px;
+    color: var(--bg-color);
+    font-size: 14px;
+}
+
+.footer .footer-content .address{
+    color: var(--bg-color);
+    line-height: 20px;
+    margin: 0px 30px 50px;
+}
+
+.footer .footer-content .address h4{
+    font-size: 1.5rem;
+    font-weight: 400;
+} 
+
+.footer .footer-content .address p{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.footer .footer-content .form{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .footer-content .form h2{
+    color: var(--bg-color);
+    margin: 0px 30px 7px;
+}
+
+.footer .footer-content .form input{
+    width: 250px;
+    height: 40px;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.footer .footer-content .form button{
+    width: 55px;
+    height: 25px;
+    margin-left: 3rem;
+    font-size: 1.5rem;
+    border-radius: 3px;
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+.footer .footer-content .form button:hover{
+    background: var(--bg-color);
+    color: var(--main-color);
+}
+
+
+
+
