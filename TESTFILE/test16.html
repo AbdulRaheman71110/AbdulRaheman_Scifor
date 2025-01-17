@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function formatString(inputString) {
+
+        const uppercaseString = inputString.toUpperCase();
+
+        const lowercaseString = inputString.toLowerCase();
+
+        const substring = inputString.substring(2, 5);
+
+        return {
+            uppercase: uppercaseString,
+            lowercase: lowercaseString,
+            substring: substring
+        };
+}
+
+        const inputStr = "HelloWorld";
+        const result = formatString(inputStr);
+        document.write("Uppercase: " + result.uppercase + "<br>");
+        document.write("Lowercase: " + result.lowercase + "<br>");
+        document.write("Substring (index 2 to 5): " + result.substring + "<br>");
+
+    </script>
+</body>
+</html>
