@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List with Context API</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body{  
+        text-align: center;
+        background-color: seashell;
+        }
+        .todo-container { 
+        max-width: 300px; 
+        margin: auto; 
+        }
+        input{
+            padding: 5px;
+            border-radius: 8px;
+        }
+        ul { 
+        list-style: none; 
+        padding: 0; }
+        li { 
+        display: flex; 
+        justify-content: space-between; 
+        padding: 5px; 
+        border-bottom: 1px solid #ddd; 
+        }
+        button { 
+        cursor: pointer;
+        background-color: rgb(255, 189, 167);
+        border-radius: 4px;
+        margin-left: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        }
+        h2{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, createContext, useContext } = React;
+
+        const TodoContext = createContext();
+
+        function TodoProvider({ children }) {
+            const [tasks, setTasks] = useState([]);
+
+            const addTask = (task) => {
+                if (task.trim()) {
+                    setTasks([...tasks, task]);
+                }
+            };
+
+            const removeTask = (index) => {
+                setTasks(tasks.filter((_, i) => i !== index));
+            };
+
+            return (
+                <TodoContext.Provider value={{ tasks, addTask, removeTask }}>
+                    {children}
+                </TodoContext.Provider>
+            );
+        }
+
+        function TodoInput() {
+            const { addTask } = useContext(TodoContext);
+            const [input, setInput] = useState("");
+
+            const handleAdd = () => {
+                addTask(input);
+                setInput("");
+            };
+
+            return (
+                <div>
+                    <input 
+                        type="text" 
+                        value={input} 
+                        onChange={(e) => setInput(e.target.value)} 
+                        placeholder="Enter task..." 
+                    />
+                    <button onClick={handleAdd}>Add</button>
+                </div>
+            );
+        }
+
+        function TodoList() {
+            const { tasks, removeTask } = useContext(TodoContext);
+
+            return (
+                <ul>
+                    {tasks.map((task, index) => (
+                        <li key={index}>
+                            {task}
+                            <button onClick={() => removeTask(index)}>Remove</button>
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
+
+        function App() {
+            return (
+                <TodoProvider>
+                    <div className="todo-container">
+                        <h2>To-Do List</h2>
+                        <TodoInput />
+                        <TodoList />
+                    </div>
+                </TodoProvider>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+        // ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+
+</body>
+</html>
