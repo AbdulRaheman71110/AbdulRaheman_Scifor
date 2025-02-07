@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Redux Login</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/redux@4.2.1/dist/redux.js" crossorigin></script>
+  <script src="https://unpkg.com/react-redux@7.2.9/dist/react-redux.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    #app {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      margin: 5px 0;
+      padding: 10px;
+      width: 90%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { createStore } = Redux;
+    const { Provider, useDispatch, useSelector } = ReactRedux;
+
+    const initialState = {
+      isLoggedIn: false,
+      user: null
+    };
+
+    const LOGIN = 'LOGIN';
+    const LOGOUT = 'LOGOUT';
+
+    const loginAction = (user) => ({ type: LOGIN, payload: user });
+    const logoutAction = () => ({ type: LOGOUT });
+
+    function authReducer(state = initialState, action) {
+      if (action.type === LOGIN) {
+        return { isLoggedIn: true, user: action.payload };
+      } else if (action.type === LOGOUT) {
+        return { isLoggedIn: false, user: null };
+      }
+      return state;
+    }
+
+    const store = createStore(authReducer);
+
+    function Login() {
+      const [name, setName] = React.useState('');
+      const [email, setEmail] = React.useState('');
+      const [password, setPassword] = React.useState('');
+      const dispatch = useDispatch();
+
+      function handleLogin() {
+        if (name && email && password) {
+          dispatch(loginAction({ name, email }));
+          setName('');
+          setEmail('');
+          setPassword('');
+        } else {
+          alert('Please fill in all fields!');
+        }
+      }
+
+      return (
+        <div>
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button onClick={handleLogin}>Login</button>
+        </div>
+      );
+    }
+
+    function Logout() {
+      const user = useSelector((state) => state.user);
+      const dispatch = useDispatch();
+
+      function handleLogout() {
+        dispatch(logoutAction());
+      }
+
+      return (
+        <div>
+          <p>Welcome, {user.name}!</p>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
+      );
+    }
+
+    function App() {
+      const isLoggedIn = useSelector((state) => state.isLoggedIn);
+
+      return (
+        <div id="app">
+          <h1>Login System</h1>
+          {isLoggedIn ? <Logout /> : <Login />}
+        </div>
+      );
+    }
+
+    ReactDOM.render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>
